@@ -11,7 +11,9 @@ namespace Jain
 
         void Start()
         {
-            
+            GameDataManager.instance.LoadDate();
+
+            transform.position = GameDataManager.instance.PlayerTransform;
         }
 
         void Update()
@@ -29,6 +31,15 @@ namespace Jain
         {
             moveVec = new Vector3(moveX, 0, 0).normalized;
             transform.position += moveVec * speed * Time.deltaTime;
+        }
+
+        private void OnDisable()
+        {
+            if (GameDataManager.instance != null)
+            {
+                GameDataManager.instance.PlayerTransform = transform.position;
+                GameDataManager.instance.SaveData();
+            }
         }
     }
 }

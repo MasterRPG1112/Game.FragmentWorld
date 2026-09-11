@@ -11,11 +11,16 @@ namespace Jain
         {
             instance = this;
             DontDestroyOnLoad(instance);
+            LoadDate();
         }
 
         public void LoadDate()
         {
+            float x = PlayerPrefs.GetFloat("PlayerX", -7f);
+            float y = PlayerPrefs.GetFloat("PlayerY", -3f);
+            float z = PlayerPrefs.GetFloat("PlayerZ", 0f);
 
+            PlayerTransform = new Vector3(x, y, z);
         }
 
         public void SaveData()
