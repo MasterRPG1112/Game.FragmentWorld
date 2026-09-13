@@ -5,16 +5,19 @@ namespace Jain
     public class PlayerSkillQ : MonoBehaviour
     {
         public float speed = 10f;
-        Vector3 QVec;
+        public float destroyTime = 3f;
+
+        private Animator animator;
 
         void Start()
         {
-            QVec = new Vector3(10, 0, 0);   
+            animator = GetComponentInChildren<Animator>();
+            Destroy(gameObject, destroyTime);
         }
 
         void Update()
         {
-            transform.position += QVec * speed * Time.deltaTime;
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
     }
 }

@@ -5,12 +5,14 @@ namespace Jain
     public class PlayerSkills : MonoBehaviour
     {
         bool Q;
+        int Qconut = 0;
         public GameObject PlayerSkill_Q;
 
+        private Animator animator;
 
         void Start()
         {
-        
+            animator = GetComponentInChildren<Animator>();
         }
 
         void Update()
@@ -19,6 +21,13 @@ namespace Jain
             if (Q == true)
             {
                 Skill_Q();
+                ++Qconut;
+                if (Qconut > 2)
+                {
+                    Qconut = 0;
+                    Invoke("Skill_Q", 0.5f);
+                    Debug.Log("추가타 발생!");
+                }
             }
         }
 
@@ -29,7 +38,10 @@ namespace Jain
 
         void Skill_Q()
         {
-            Instantiate(PlayerSkill_Q, transform.position, transform.rotation);
+            Vector3 spawnPosition = transform.position + new Vector3(1f, 0.5f, 0f);
+
+            Instantiate(PlayerSkill_Q, spawnPosition, transform.rotation);
+            animator.SetTrigger("IsQskill");
         }
     }
 }

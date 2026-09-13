@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 0a2f437bee57b94408eaeae4455ca7f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1880807511935011562
+    second: Qskill_0
+  - first:
+      213: -9027047185595811665
+    second: Qskill_1
+  - first:
+      213: -1972094924911880990
+    second: Qskill_2
+  - first:
+      213: 8126477142941792874
+    second: Qskill_3
+  - first:
+      213: -4939627154131995686
+    second: Qskill_4
+  - first:
+      213: -3449756816471942632
+    second: Qskill_5
+  - first:
+      213: 5583376188041823966
+    second: Qskill_6
+  - first:
+      213: 953890172262042491
+    second: Qskill_7
+  - first:
+      213: -7529718766892075859
+    second: Qskill_8
+  - first:
+      213: 7501003401336112204
+    second: Qskill_9
+  - first:
+      213: 3953512562235387999
+    second: Qskill_10
+  - first:
+      213: 8597247101790867569
+    second: Qskill_11
+  - first:
+      213: -2379369288939747217
+    second: Qskill_12
+  - first:
+      213: 5118267324628241873
+    second: Qskill_13
+  - first:
+      213: 7459491557955560694
+    second: Qskill_14
+  - first:
+      213: 657397562970356176
+    second: Qskill_15
+  - first:
+      213: -2563353092669470070
+    second: Qskill_16
+  - first:
+      213: 7262644297833515539
+    second: Qskill_17
+  - first:
+      213: 920016197871272288
+    second: Qskill_18
+  - first:
+      213: -5660938972463825447
+    second: Qskill_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Qskill_0
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 684
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeac5c79778f91a10800000000000000
+      internalID: 1880807511935011562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_1
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 571
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa83fdb796c79b280800000000000000
+      internalID: -9027047185595811665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_2
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 601
+        width: 28
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4d6494d16b1a4e0800000000000000
+      internalID: -1972094924911880990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_3
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 576
+        width: 56
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a7064d7eb07c070800000000000000
+      internalID: 8126477142941792874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_4
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 286
+        width: 157
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3b61b464be27bb0800000000000000
+      internalID: -4939627154131995686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_5
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 467
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a15b8f3700020d0800000000000000
+      internalID: -3449756816471942632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 324
+        width: 77
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed68b9f9f032c7d40800000000000000
+      internalID: 5583376188041823966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_7
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 441
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b4a68ce06ec3d00800000000000000
+      internalID: 953890172262042491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_8
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 326
+        width: 118
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da43ec8fca0118790800000000000000
+      internalID: -7529718766892075859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_9
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 337
+        width: 62
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44c2abf9dae81860800000000000000
+      internalID: 7501003401336112204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 387
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50b51f8ab2bdd630800000000000000
+      internalID: 3953512562235387999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_11
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 347
+        width: 174
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170508c50be8f4770800000000000000
+      internalID: 8597247101790867569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_12
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 352
+        width: 182
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68c547fc38cafed0800000000000000
+      internalID: -2379369288939747217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_13
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 373
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd84f5930db70740800000000000000
+      internalID: 5118267324628241873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_14
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 350
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f467f4cc00758760800000000000000
+      internalID: 7459491557955560694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_15
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 275
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d93e09b99b8f1900800000000000000
+      internalID: 657397562970356176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 110
+        width: 185
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a898581f32d6cd0800000000000000
+      internalID: -2563353092669470070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_17
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 107
+        width: 182
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a026e72881ac460800000000000000
+      internalID: 7262644297833515539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_18
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 109
+        width: 177
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06109b58bdd84cc00800000000000000
+      internalID: 920016197871272288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Qskill_19
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 109
+        width: 122
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ddf02b5ffd4071b0800000000000000
+      internalID: -5660938972463825447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Qskill_0: 1880807511935011562
+      Qskill_1: -9027047185595811665
+      Qskill_10: 3953512562235387999
+      Qskill_11: 8597247101790867569
+      Qskill_12: -2379369288939747217
+      Qskill_13: 5118267324628241873
+      Qskill_14: 7459491557955560694
+      Qskill_15: 657397562970356176
+      Qskill_16: -2563353092669470070
+      Qskill_17: 7262644297833515539
+      Qskill_18: 920016197871272288
+      Qskill_19: -5660938972463825447
+      Qskill_2: -1972094924911880990
+      Qskill_3: 8126477142941792874
+      Qskill_4: -4939627154131995686
+      Qskill_5: -3449756816471942632
+      Qskill_6: 5583376188041823966
+      Qskill_7: 953890172262042491
+      Qskill_8: -7529718766892075859
+      Qskill_9: 7501003401336112204
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,11 +8,15 @@ namespace Jain
         public float speed;
         float moveX;
         Vector3 moveVec;
+        Vector3 RotVec;
+
+        private Animator animator;
 
         void Start()
         {
-            GameDataManager.instance.LoadDate();
+            animator = GetComponentInChildren<Animator>();
 
+            GameDataManager.instance.LoadDate();
             transform.position = GameDataManager.instance.PlayerTransform;
         }
 
@@ -29,8 +33,19 @@ namespace Jain
 
         void Move()
         {
+            if (moveX > 0)
+            {
+                RotVec = new Vector3(0, 0, 0);
+                transform.rotation = Quaternion.Euler(RotVec);
+            }
+            else if (moveX < 0)
+            {
+                RotVec = new Vector3(0, 180, 0);
+                transform.rotation = Quaternion.Euler(RotVec);
+            }
             moveVec = new Vector3(moveX, 0, 0).normalized;
             transform.position += moveVec * speed * Time.deltaTime;
+            animator.SetBool("IsMove", moveX != 0);
         }
 
         private void OnDisable()
