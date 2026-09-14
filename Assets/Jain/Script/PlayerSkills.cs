@@ -38,7 +38,17 @@ namespace Jain
 
         void Skill_Q()
         {
-            Vector3 spawnPosition = transform.position + new Vector3(1f, 0.5f, 0f);
+            Vector3 convert;
+
+            if (transform.position.x > 0f)
+            {
+                convert = new Vector3(1f, 0.5f, 0f);
+            }
+            else
+            {
+                convert = new Vector3(-1f, 0.5f, 0f);
+            }
+                Vector3 spawnPosition = transform.position + convert;
 
             Instantiate(PlayerSkill_Q, spawnPosition, transform.rotation);
             animator.SetTrigger("IsQskill");
