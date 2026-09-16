@@ -39,9 +39,23 @@ namespace Jain
 
         void Skill_Q()
         {
+<<<<<<< HEAD
             Instantiate(PlayerSkill_Q, QskillPoint.transform.position, transform.rotation);
             Invoke("Skill_Q2", 0.2f);
         }
+=======
+            Vector3 convert;
+
+            if (transform.position.x > 0f)
+            {
+                convert = new Vector3(1f, 0.5f, 0f);
+            }
+            else
+            {
+                convert = new Vector3(-1f, 0.5f, 0f);
+            }
+                Vector3 spawnPosition = transform.position + convert;
+>>>>>>> 0973462fe7b83bb51a5dce7019ede7f439a8d62f
 
         void Skill_Q2()
         {
