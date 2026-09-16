@@ -7,6 +7,7 @@ namespace Jain
         bool Q;
         int Qconut = 0;
         public GameObject PlayerSkill_Q;
+        public GameObject QskillPoint;
 
         private Animator animator;
 
@@ -38,9 +39,12 @@ namespace Jain
 
         void Skill_Q()
         {
-            Vector3 spawnPosition = transform.position + new Vector3(1f, 0.5f, 0f);
+            Instantiate(PlayerSkill_Q, QskillPoint.transform.position, transform.rotation);
+            Invoke("Skill_Q2", 0.2f);
+        }
 
-            Instantiate(PlayerSkill_Q, spawnPosition, transform.rotation);
+        void Skill_Q2()
+        {
             animator.SetTrigger("IsQskill");
         }
     }

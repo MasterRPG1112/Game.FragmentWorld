@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae000ef17fa9c44cac6b3b1ef21603f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.PlayerSkills
-  PlayerSkill_Q: {fileID: 459039136738241665, guid: 62fdd72cf1fc63d4fb78691089bf6ae0, type: 3}
+  PlayerSkill_Q: {fileID: 5805085588824740820, guid: a075ec16213cb0a4aaf687caef066cc5, type: 3}
 --- !u!114 &1866885894
 MonoBehaviour:
   m_ObjectHideFlags: 0
