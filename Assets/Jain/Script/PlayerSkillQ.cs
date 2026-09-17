@@ -5,7 +5,7 @@ namespace Jain
     public class PlayerSkillQ : MonoBehaviour
     {
         public float speed = 10f;
-        public float destroyTime = 3f;
+        public float destroyTime = 0.2f;
 
         bool LaunchCheck = true;
 
