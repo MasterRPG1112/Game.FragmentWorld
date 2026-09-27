@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 3df64d1e9ffa90b49a2a8fd91b29cba3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8677009451150641263
+    second: Wskill2_0
+  - first:
+      213: -219353965212523324
+    second: Wskill2_1
+  - first:
+      213: -3299982816369746618
+    second: Wskill2_2
+  - first:
+      213: -2063310989080284682
+    second: Wskill2_3
+  - first:
+      213: 8736747548871549930
+    second: Wskill2_4
+  - first:
+      213: -5848919676925416174
+    second: Wskill2_5
+  - first:
+      213: 4093968869696581496
+    second: Wskill2_6
+  - first:
+      213: -2860402852232157756
+    second: Wskill2_7
+  - first:
+      213: -8353636416489105838
+    second: Wskill2_8
+  - first:
+      213: 7795620536947636201
+    second: Wskill2_9
+  - first:
+      213: 7843915424792648449
+    second: Wskill2_10
+  - first:
+      213: 7762870046762620641
+    second: Wskill2_11
+  - first:
+      213: 7318050268105335080
+    second: Wskill2_12
+  - first:
+      213: -7899750820735658957
+    second: Wskill2_13
+  - first:
+      213: 2000687186432462772
+    second: Wskill2_14
+  - first:
+      213: 2653344086190253178
+    second: Wskill2_15
+  - first:
+      213: -7974644678899631702
+    second: Wskill2_16
+  - first:
+      213: 3291846499450132033
+    second: Wskill2_17
+  - first:
+      213: 7838439137656948971
+    second: Wskill2_18
+  - first:
+      213: 5924063680209551627
+    second: Wskill2_19
+  - first:
+      213: -8189355322284290119
+    second: Wskill2_20
+  - first:
+      213: -3270744783472494329
+    second: Wskill2_21
+  - first:
+      213: 1051115430761346157
+    second: Wskill2_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wskill2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 1057
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f688a808f1eea6870800000000000000
+      internalID: 8677009451150641263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 937
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c42f671bb2b4fcf0800000000000000
+      internalID: -219353965212523324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 943
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d5361dc1b1432d0800000000000000
+      internalID: -3299982816369746618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 953
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f1b5ba5695ad53e0800000000000000
+      internalID: -2063310989080284682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_4
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 943
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3e0ce3b992f3970800000000000000
+      internalID: 8736747548871549930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_5
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 924
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d6111fa8674dea0800000000000000
+      internalID: -5848919676925416174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_6
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 938
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fa5c70ff2b0d830800000000000000
+      internalID: 4093968869696581496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_7
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 820
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5203ec2cecd48d0800000000000000
+      internalID: -2860402852232157756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_8
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 702
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256566c40fbe11c80800000000000000
+      internalID: -8353636416489105838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_9
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 698
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7f08c439b9f2c60800000000000000
+      internalID: 7795620536947636201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_10
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 510
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b19fe158f2bdc60800000000000000
+      internalID: 7843915424792648449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_11
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 505
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e65ec69d214bbb60800000000000000
+      internalID: 7762870046762620641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1057
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821eed632ffee8560800000000000000
+      internalID: 7318050268105335080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_13
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 434
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33453f3bb727e5290800000000000000
+      internalID: -7899750820735658957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_14
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 462
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf8bfd556ed3cb10800000000000000
+      internalID: 2000687186432462772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_15
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 451
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a74e04c636292d420800000000000000
+      internalID: 2653344086190253178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_16
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 284
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa97a308aee545190800000000000000
+      internalID: -7974644678899631702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_17
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 282
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14696d643fcfead20800000000000000
+      internalID: 3291846499450132033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_18
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 198
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8cf89addab7cc60800000000000000
+      internalID: 7838439137656948971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_19
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 220
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b010fa5b780863250800000000000000
+      internalID: 5924063680209551627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_20
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 184
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf4ac339b0995e80800000000000000
+      internalID: -8189355322284290119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_21
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 150
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709f826d2fafb92d0800000000000000
+      internalID: -3270744783472494329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wskill2_22
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 150
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64367c4aef469e00800000000000000
+      internalID: 1051115430761346157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wskill2_0: 8677009451150641263
+      Wskill2_1: -219353965212523324
+      Wskill2_10: 7843915424792648449
+      Wskill2_11: 7762870046762620641
+      Wskill2_12: 7318050268105335080
+      Wskill2_13: -7899750820735658957
+      Wskill2_14: 2000687186432462772
+      Wskill2_15: 2653344086190253178
+      Wskill2_16: -7974644678899631702
+      Wskill2_17: 3291846499450132033
+      Wskill2_18: 7838439137656948971
+      Wskill2_19: 5924063680209551627
+      Wskill2_2: -3299982816369746618
+      Wskill2_20: -8189355322284290119
+      Wskill2_21: -3270744783472494329
+      Wskill2_22: 1051115430761346157
+      Wskill2_3: -2063310989080284682
+      Wskill2_4: 8736747548871549930
+      Wskill2_5: -5848919676925416174
+      Wskill2_6: 4093968869696581496
+      Wskill2_7: -2860402852232157756
+      Wskill2_8: -8353636416489105838
+      Wskill2_9: 7795620536947636201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
