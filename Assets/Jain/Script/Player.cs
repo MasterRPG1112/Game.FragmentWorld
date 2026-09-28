@@ -10,6 +10,10 @@ namespace Jain
         Vector3 moveVec;
         Vector3 RotVec;
 
+        //스탯 변수
+        public float hp;
+        public float damage;
+
         //점프 변수
         bool jump;
         bool isJump;
