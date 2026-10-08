@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 504b26789157c0247b30367a3e7917be
+guid: c7e523e314511e44db8fe30bf30c9617
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8499243052114706715
-    second: Mob1_0
+      213: -1090598173340461525
+    second: Mob2_0
+  - first:
+      213: 6798491688050762024
+    second: Mob2_1
+  - first:
+      213: 95600462376687378
+    second: Mob2_2
+  - first:
+      213: -2713200520772441483
+    second: Mob2_3
+  - first:
+      213: -1284645191754823875
+    second: Mob2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mob1_0
+      name: Mob2_0
       rect:
         serializedVersion: 2
-        x: 151
-        y: 64
-        width: 1476
-        height: 798
+        x: 244
+        y: 471
+        width: 29
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5eefefa997f9c0a80800000000000000
-      internalID: -8499243052114706715
+      spriteID: b261a555dba6dd0f0800000000000000
+      internalID: -1090598173340461525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mob2_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 513
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82126ba9b28195e50800000000000000
+      internalID: 6798491688050762024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mob2_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 33
+        width: 941
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21753503d14a35100800000000000000
+      internalID: 95600462376687378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mob2_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 449
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a24f26086c85ad0800000000000000
+      internalID: -2713200520772441483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mob2_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 391
+        width: 107
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d374a0321060c2ee0800000000000000
+      internalID: -1284645191754823875
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mob1_0: -8499243052114706715
+      Mob2_0: -1090598173340461525
+      Mob2_1: 6798491688050762024
+      Mob2_2: 95600462376687378
+      Mob2_3: -2713200520772441483
+      Mob2_4: -1284645191754823875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -55,7 +55,7 @@ namespace Jain
 
             if (dir.sqrMagnitude > 0.001f)
             {
-                float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + angleOffset;
+                float targetAngle = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
 
                 float currentAngle = transform.eulerAngles.z;
                 float smoothAngle = Mathf.LerpAngle(currentAngle, targetAngle, rotationSpeed * Time.deltaTime);

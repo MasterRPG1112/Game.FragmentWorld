@@ -10,6 +10,7 @@ TagManager:
   - Wskill2
   - Mob
   - Eskill
+  - Mob2_skill
   layers:
   - Default
   - TransparentFX

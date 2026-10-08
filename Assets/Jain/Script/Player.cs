@@ -67,6 +67,21 @@ namespace Jain
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Mob2_skill"))
+            {
+                Mob2_skill mob2_skill = GameObject.FindGameObjectWithTag("Mob2_skill").GetComponent<Mob2_skill>();
+
+                Destroy(other.gameObject);
+                hp -= mob2_skill.damage;
+                if (hp <= 0f)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Ground"))

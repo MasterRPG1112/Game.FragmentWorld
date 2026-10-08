@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 504b26789157c0247b30367a3e7917be
+guid: 108d05a6d40286f42a0f0fdda9c8f134
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8499243052114706715
-    second: Mob1_0
+      213: -4447374861805806015
+    second: Mob2_skill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mob1_0
+      name: Mob2_skill_0
       rect:
         serializedVersion: 2
-        x: 151
-        y: 64
-        width: 1476
-        height: 798
+        x: 437
+        y: 27
+        width: 563
+        height: 673
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5eefefa997f9c0a80800000000000000
-      internalID: -8499243052114706715
+      spriteID: 14e101b5020c742c0800000000000000
+      internalID: -4447374861805806015
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mob1_0: -8499243052114706715
+      Mob2_skill_0: -4447374861805806015
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
