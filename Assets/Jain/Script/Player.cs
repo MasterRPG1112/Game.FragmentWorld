@@ -80,6 +80,17 @@ namespace Jain
                     Destroy(gameObject);
                 }
             }
+            if (other.CompareTag("Mob1_skill"))
+            {
+                Mob1_skill mob1_skill = GameObject.FindGameObjectWithTag("Mob1_skill").GetComponent<Mob1_skill>();
+
+                Destroy(other.gameObject);
+                hp -= mob1_skill.damage;
+                if (hp <= 0f)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

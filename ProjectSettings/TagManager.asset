@@ -11,6 +11,8 @@ TagManager:
   - Mob
   - Eskill
   - Mob2_skill
+  - Mob1_skill
+  - GameManager
   layers:
   - Default
   - TransparentFX

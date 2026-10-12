@@ -8,6 +8,7 @@ namespace Jain
     {
         //월드 전환 변수
         bool Tab;
+        int worldBool = 1;
 
         void Start()
         {
@@ -32,11 +33,22 @@ namespace Jain
                 if (SceneManager.GetActiveScene().name == "World1")
                 {
                     SceneManager.LoadScene("World2");
+                    worldBool = 0;
                 }
                 else
                 {
                     SceneManager.LoadScene("World1");
+                    worldBool = 1;
                 }
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (GameDataManager.instance != null)
+            {
+                GameDataManager.instance.worldText = worldBool;
+                GameDataManager.instance.SaveData();
             }
         }
     }

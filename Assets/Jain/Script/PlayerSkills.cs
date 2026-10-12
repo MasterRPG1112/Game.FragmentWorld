@@ -135,6 +135,10 @@ namespace Jain
             {
                 EskillCooldown -= Time.deltaTime;
             }
+            if (RskillCooldown > 0f)
+            {
+                RskillCooldown -= Time.deltaTime;
+            }
         }
 
         void Skill_Q()

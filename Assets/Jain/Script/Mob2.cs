@@ -34,7 +34,7 @@ namespace Jain
         void Skill()
         {
             Instantiate(Mob2_skill, Point.transform.position, Point.transform.rotation);
-            skillCooldown = 2f;
+            skillCooldown = 2.5f;
         }
     }
 }

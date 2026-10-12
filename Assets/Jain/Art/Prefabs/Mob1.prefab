@@ -102,11 +102,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6181788051794734508}
   - component: {fileID: 9056007086543521104}
+  - component: {fileID: 3314770309391780591}
   - component: {fileID: 7020038110317214011}
   - component: {fileID: 2711492424801289311}
   m_Layer: 0
   m_Name: Mob1
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +145,21 @@ MonoBehaviour:
   StopTime: 0
   Player: {fileID: 0}
   type: 1
+--- !u!114 &3314770309391780591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728054116250736851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07995284c79d7c844bb3d404da367d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Jain::Jain.Mob1
+  Mob1_skill: {fileID: 1216162273102132155, guid: 4028b574f3c17af45b6a6e2314cdb386, type: 3}
+  Point: {fileID: 5862866956583293825}
+  skillCooldown: 0
 --- !u!50 &7020038110317214011
 Rigidbody2D:
   serializedVersion: 5
@@ -170,7 +186,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &2711492424801289311
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -232,10 +248,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862866956583293825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 0.9238796, w: -0.38268325}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6181788051794734508}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 225}

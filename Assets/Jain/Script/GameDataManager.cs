@@ -6,6 +6,7 @@ namespace Jain
     {
         public static GameDataManager instance;
         public Vector3 PlayerTransform;
+        public int worldText;
 
         private void Awake()
         {
@@ -21,6 +22,8 @@ namespace Jain
             float z = PlayerPrefs.GetFloat("PlayerZ", 0f);
 
             PlayerTransform = new Vector3(x, y, z);
+
+            worldText = PlayerPrefs.GetInt("WorldText");
         }
 
         public void SaveData()
@@ -35,6 +38,7 @@ namespace Jain
                 PlayerPrefs.SetString("id", "Jain");
             }
 
+            PlayerPrefs.SetInt("WorldText", worldText);
             PlayerPrefs.SetFloat("PlayerX", PlayerTransform.x);
             PlayerPrefs.SetFloat("PlayerY", PlayerTransform.y);
             PlayerPrefs.SetFloat("PlayerZ", PlayerTransform.z);
