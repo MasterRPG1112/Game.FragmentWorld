@@ -2,12 +2,14 @@ using Codice.Client.BaseCommands.WkStatus.Printers;
 using Codice.CM.Common;
 using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Jain
 {
     public class CommonMob : MonoBehaviour
     {
-        public float Hp = 25.0f;
+        public float maxHp;
+        public float Hp;
         public float StopTime;
 
         public GameObject Player;
@@ -100,10 +102,18 @@ namespace Jain
         private void OnTriggerEnter2D(Collider2D other)
         {
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-
+            float currentDamage;
+            if (SceneManager.GetActiveScene().name == "World2")
+            {
+                currentDamage = player.damage - (player.damage / 4);
+            }
+            else
+            {
+                currentDamage = player.damage;
+            }
             if (other.CompareTag("Qskill"))
             {
-                Hp -= player.damage;
+                Hp -= currentDamage;
                 if (Hp <= 0f)
                 {
                     Destroy(gameObject);
@@ -123,7 +133,7 @@ namespace Jain
             if (other.CompareTag("Eskill"))
             {
                 Destroy(other.gameObject);
-                Hp -= player.damage - (player.damage * 0.2f);
+                Hp -= currentDamage - (currentDamage * 0.2f);
                 if (Hp <= 0f)
                 {
                     Destroy(gameObject);

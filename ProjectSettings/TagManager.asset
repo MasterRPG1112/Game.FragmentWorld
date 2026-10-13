@@ -13,6 +13,8 @@ TagManager:
   - Mob2_skill
   - Mob1_skill
   - GameManager
+  - MiniBossItem1
+  - MiniBossItem2
   layers:
   - Default
   - TransparentFX

@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6e673be0b81d94090c8556b06492e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.CommonMob
+  maxHp: 50
   Hp: 50
   StopTime: 0
   Player: {fileID: 0}

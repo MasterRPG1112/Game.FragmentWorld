@@ -1,18 +1,22 @@
 using UnityEngine;
+using UnityEngine.Assemblies;
+using UnityEngine.SceneManagement;
 
 namespace Jain
 {
     public class Player : MonoBehaviour
     {
         //이동 변수
-        public float speed;
         float moveX;
         Vector3 moveVec;
         Vector3 RotVec;
 
-        //스탯 변수
+        //스탯 변수 - 기본 값 hp 100 / damage 5 / miniBossItem1 0 / miniBossItem2 0
         public float hp;
         public float damage;
+        public int miniBossItem1;
+        public int miniBossItem2;
+        public float speed;
 
         //점프 변수
         bool jump;
@@ -44,6 +48,15 @@ namespace Jain
 
         void Move()
         {
+            float currentSpeed;
+            if (SceneManager.GetActiveScene().name == "World1")
+            {
+                currentSpeed = speed - (speed / 2);
+            }
+            else
+            {
+                currentSpeed = speed;
+            }
             if (moveX > 0)
             {
                 RotVec = new Vector3(0, 0, 0);
@@ -55,7 +68,7 @@ namespace Jain
                 transform.rotation = Quaternion.Euler(RotVec);
             }
             moveVec = new Vector3(moveX, 0, 0).normalized;
-            transform.position += moveVec * speed * Time.deltaTime;
+            transform.position += moveVec * currentSpeed * Time.deltaTime;
         }
 
         void Jump()
@@ -77,7 +90,7 @@ namespace Jain
                 hp -= mob2_skill.damage;
                 if (hp <= 0f)
                 {
-                    Destroy(gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
             }
             if (other.CompareTag("Mob1_skill"))
@@ -88,8 +101,22 @@ namespace Jain
                 hp -= mob1_skill.damage;
                 if (hp <= 0f)
                 {
-                    Destroy(gameObject);
+                    SceneManager.LoadScene("GameOver");
                 }
+            }
+            //시간 관련 보스 드랍템
+            if (other.CompareTag("MiniBossItem1"))
+            {
+                Destroy(other.gameObject);
+                miniBossItem1 = 1;
+                speed = 10;
+            }
+            //공간 관련 보스 드랍템
+            if (other.CompareTag("MiniBossItem2"))
+            {
+                Destroy(other.gameObject);
+                miniBossItem2 = 1;
+                damage = 15;
             }
         }
 

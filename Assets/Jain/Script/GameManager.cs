@@ -10,12 +10,17 @@ namespace Jain
     public class GameManager : MonoBehaviour
     {
         public GameObject[] Enemys;
+        public Transform player;
         public Vector3 spawnValue;
         public int enemyCount;
 
         public float spawnWait;
 
         public List<GameObject> listEnemys = new List<GameObject>();
+
+        //Hp바
+        public GameObject hpBar;
+        public Transform canvas;
 
         //UI
         public Text worldText;
@@ -40,16 +45,33 @@ namespace Jain
                     if (listEnemys.Count < enemyCount)
                     {
                         GameObject enemy = Enemys[Random.Range(0, Enemys.Length)];
-                        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValue.x, spawnValue.x), spawnValue.y, spawnValue.z);
+                        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValue.x, spawnValue.x) + player.position.x, spawnValue.y, spawnValue.z);
                         Quaternion spawnRotation = Quaternion.identity;
-                        listEnemys.Add(Instantiate(enemy, spawnPosition, enemy.transform.rotation));
+
+                        //AI 사용
+                        GameObject spawnedEnemy = Instantiate(enemy, spawnPosition, spawnRotation);
+                        listEnemys.Add(spawnedEnemy);
+
+                        if (hpBar != null && canvas != null)
+                        {
+                            GameObject hpBarObj = Instantiate(hpBar, canvas);
+                            MobHpBar mobHpBar = hpBarObj.GetComponent<MobHpBar>();
+
+                            if (mobHpBar != null)
+                            {
+                                mobHpBar.Initialize(spawnedEnemy.transform);
+                            }
+                        }
                     }
                     yield return new WaitForSeconds(spawnWait);
                 }
             }
         }
+
         public void ReloadUI()
         {
+            PlayerSkills playerSkills = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkills>();
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             if (GameDataManager.instance.worldText == 1)
             {
                 worldText.text = "세계 : 흐르지 않는 시간";
@@ -57,6 +79,51 @@ namespace Jain
             else
             {
                 worldText.text = "세계 : 변하지 않는 공간";
+            }
+            if (player.miniBossItem1 == 1)
+            {
+                if (GameDataManager.instance.cooldown1 > 0)
+                {
+                    cooldown1.text = "시간정지 : " + playerSkills.WskillCooldown.ToString("F2");
+                }
+                else
+                {
+                    cooldown1.text = "시간정지 : 0";
+                }
+            }
+            else
+            {
+                cooldown1.text = "시간정지 : 봉인";
+            }
+            if (player.miniBossItem2 == 1)
+            {
+                if (GameDataManager.instance.cooldown2 > 0)
+                {
+                    cooldown2.text = "공간참 : " + playerSkills.EskillCooldown.ToString("F2");
+                }
+                else
+                {
+                    cooldown2.text = "공간참 : 0";
+                }
+            }
+            else
+            {
+                cooldown2.text = "공간참 : 봉인";
+            }
+            if (player.miniBossItem1 == 1 && player.miniBossItem2 == 1)
+            {
+                if (GameDataManager.instance.cooldown3 > 0)
+                {
+                    cooldown3.text = "각성 : " + playerSkills.RskillCooldown.ToString("F2");
+                }
+                else
+                {
+                    cooldown3.text = "각성 : 0";
+                }
+            }
+            else
+            {
+                cooldown3.text = "각성 : 봉인";
             }
         }
 
