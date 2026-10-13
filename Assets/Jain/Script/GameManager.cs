@@ -17,7 +17,11 @@ namespace Jain
 
         public List<GameObject> listEnemys = new List<GameObject>();
 
+        //UI
         public Text worldText;
+        public Text cooldown1;
+        public Text cooldown2;
+        public Text cooldown3;
 
         IEnumerator SpawnEnemy()
         {

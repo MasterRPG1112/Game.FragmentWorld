@@ -36,6 +36,13 @@ namespace Jain
         public GameObject Point;
         public GameObject MainCamera;
 
+        private void Awake()
+        {
+            WskillCooldown = GameDataManager.instance.cooldown1;
+            EskillCooldown = GameDataManager.instance.cooldown2;
+            RskillCooldown = GameDataManager.instance.cooldown3;
+        }
+
         void Start()
         {
             
@@ -90,12 +97,15 @@ namespace Jain
                         {
                             Skill_W1();
                             WskillCooldown = 4.5f;
+                            GameDataManager.instance.cooldown1 = WskillCooldown;
                         }
                         else if (Form == 1)
                         {
                             Skill_W2();
                             WskillCooldown = 10.0f;
+                            GameDataManager.instance.cooldown1 = WskillCooldown;
                         }
+                        GameDataManager.instance.SaveData();
                     }
                 }
             }
@@ -106,8 +116,17 @@ namespace Jain
                     if (E == true)
                     {
                         for (int i = 0; i < 3; i++) Skill_E();
-                        if (ReturnOfTheGuardian == 1) EskillCooldown = 1.2f;
-                        else EskillCooldown = 7.5f;
+                        if (ReturnOfTheGuardian == 1)
+                        {
+                            EskillCooldown = 1.2f;
+                            GameDataManager.instance.cooldown2 = EskillCooldown;
+                        }
+                        else
+                        {
+                            EskillCooldown = 7.5f;
+                            GameDataManager.instance.cooldown2 = EskillCooldown;
+                        }
+                        GameDataManager.instance.SaveData();
                     }
                 }
             }
@@ -117,27 +136,34 @@ namespace Jain
                 {
                     Skill_R();
                     RskillCooldown = 50.0f;
+                    GameDataManager.instance.cooldown3 = RskillCooldown;
+                    GameDataManager.instance.SaveData();
                 }
             }
         }
 
         void CooldownMin()
         {
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             if (QskillCooldown > 0f)
             {
                 QskillCooldown -= Time.deltaTime;
+                gameManager.ReloadUI();
             }
             if (WskillCooldown > 0f)
             {
                 WskillCooldown -= Time.deltaTime;
+                gameManager.ReloadUI();
             }
             if (EskillCooldown > 0f)
             {
                 EskillCooldown -= Time.deltaTime;
+                gameManager.ReloadUI();
             }
             if (RskillCooldown > 0f)
             {
                 RskillCooldown -= Time.deltaTime;
+                gameManager.ReloadUI();
             }
         }
 
