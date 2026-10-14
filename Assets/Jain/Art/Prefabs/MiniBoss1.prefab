@@ -101,11 +101,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2617547508917910076}
+  - component: {fileID: -4711676406830107791}
+  - component: {fileID: 6418104373341673850}
   - component: {fileID: 8932830425183668161}
   - component: {fileID: 6244787596667218305}
   m_Layer: 0
   m_Name: MiniBoss1
-  m_TagString: Untagged
+  m_TagString: MiniBoss1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +128,38 @@ Transform:
   - {fileID: 1522000702884442198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4711676406830107791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440603065106352601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6e673be0b81d94090c8556b06492e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Jain::Jain.CommonMob
+  maxHp: 200
+  Hp: 200
+  StopTime: 0
+  Player: {fileID: 0}
+  type: 1
+--- !u!114 &6418104373341673850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440603065106352601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5e1e4bea5cf984da7be7a6b6a1dbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Jain::Jain.MiniBoss1
+  miniBoss1Pattern1: {fileID: 0}
+  miniBoss1Pattern2: {fileID: 0}
+  miniBoss1Pattern3: {fileID: 0}
 --- !u!70 &8932830425183668161
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

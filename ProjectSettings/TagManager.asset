@@ -16,6 +16,9 @@ TagManager:
   - MiniBossItem1
   - MiniBossItem2
   - GameDataManager
+  - MiniBoss1
+  - BGM1
+  - BGM2
   layers:
   - Default
   - TransparentFX

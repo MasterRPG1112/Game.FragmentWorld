@@ -97,15 +97,7 @@ namespace Jain
                 
                 if (hp <= 0f)
                 {
-                    GameDataManager.instance.mobKill = 0;
-                    GameDataManager.instance.miniBossType = 0;
-                    GameDataManager.instance.PlayerTransform = Vector3.zero + (-Vector3.up * 2.9f);
-                    GameDataManager.instance.miniBossItem1 = 0;
-                    GameDataManager.instance.miniBossItem2 = 0;
-                    GameDataManager.instance.damage = 5;
-                    GameDataManager.instance.speed = 5;
-                    GameDataManager.instance.hp = 100;
-                    GameDataManager.instance.SaveData();
+                    DataReset();
                     SceneManager.LoadScene("GameOver");
                 }
                 else
@@ -123,15 +115,7 @@ namespace Jain
                 
                 if (hp <= 0f)
                 {
-                    GameDataManager.instance.mobKill = 0;
-                    GameDataManager.instance.miniBossType = 0;
-                    GameDataManager.instance.PlayerTransform = Vector3.zero + (-Vector3.up * 2.9f);
-                    GameDataManager.instance.miniBossItem1 = 0;
-                    GameDataManager.instance.miniBossItem2 = 0;
-                    GameDataManager.instance.damage = 5;
-                    GameDataManager.instance.speed = 5;
-                    GameDataManager.instance.hp = 100;
-                    GameDataManager.instance.SaveData();
+                    DataReset();
                     SceneManager.LoadScene("GameOver");
                 }
                 else
@@ -173,6 +157,23 @@ namespace Jain
                 GameDataManager.instance.damage = damage;
                 GameDataManager.instance.SaveData();
             }
+        }
+
+        void DataReset()
+        {
+            GameDataManager.instance.mobKill = 0;
+            GameDataManager.instance.miniBossType = 0;
+            GameDataManager.instance.PlayerTransform = Vector3.zero + (-Vector3.up * 2.9f);
+            GameDataManager.instance.miniBossItem1 = 0;
+            GameDataManager.instance.miniBossItem2 = 0;
+            GameDataManager.instance.cooldown1 = 0;
+            GameDataManager.instance.cooldown2 = 0;
+            GameDataManager.instance.cooldown3 = 0;
+            GameDataManager.instance.cooldown4 = 0;
+            GameDataManager.instance.damage = 5;
+            GameDataManager.instance.speed = 5;
+            GameDataManager.instance.hp = 100;
+            GameDataManager.instance.SaveData();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

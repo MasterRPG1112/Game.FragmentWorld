@@ -26,8 +26,8 @@ namespace Jain
 
                 if (playerComponent != null)
                 {
-                    maxHp = playerComponent.hp;
-                    currentHp = maxHp;
+                    maxHp = 100;
+                    currentHp = playerComponent.hp;
                 }
             }
 
