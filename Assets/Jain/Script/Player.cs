@@ -1,3 +1,4 @@
+using PlasticGui.WorkspaceWindow.Attributes;
 using UnityEngine;
 using UnityEngine.Assemblies;
 using UnityEngine.SceneManagement;
@@ -14,9 +15,9 @@ namespace Jain
         //스탯 변수 - 기본 값 hp 100 / damage 5 / miniBossItem1 0 / miniBossItem2 0
         public float hp;
         public float damage;
+        public float speed;
         public int miniBossItem1;
         public int miniBossItem2;
-        public float speed;
 
         //점프 변수
         bool jump;
@@ -31,6 +32,11 @@ namespace Jain
 
             GameDataManager.instance.LoadDate();
             transform.position = GameDataManager.instance.PlayerTransform;
+            miniBossItem1 = GameDataManager.instance.miniBossItem1;
+            miniBossItem2 = GameDataManager.instance.miniBossItem2;
+            hp = GameDataManager.instance.hp;
+            damage = GameDataManager.instance.damage;
+            speed = GameDataManager.instance.speed;
         }
 
         void Update()
@@ -82,15 +88,31 @@ namespace Jain
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            PlayerSkills playerSkills = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkills>();
             if (other.CompareTag("Mob2_skill"))
             {
                 Mob2_skill mob2_skill = GameObject.FindGameObjectWithTag("Mob2_skill").GetComponent<Mob2_skill>();
 
                 Destroy(other.gameObject);
-                hp -= mob2_skill.damage;
+                
                 if (hp <= 0f)
                 {
+                    GameDataManager.instance.mobKill = 0;
+                    GameDataManager.instance.miniBossType = 0;
+                    GameDataManager.instance.PlayerTransform = Vector3.zero + (-Vector3.up * 2.9f);
+                    GameDataManager.instance.miniBossItem1 = 0;
+                    GameDataManager.instance.miniBossItem2 = 0;
+                    GameDataManager.instance.damage = 5;
+                    GameDataManager.instance.speed = 5;
+                    GameDataManager.instance.hp = 100;
+                    GameDataManager.instance.SaveData();
                     SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    hp -= mob2_skill.damage;
+                    GameDataManager.instance.hp = hp;
+                    GameDataManager.instance.SaveData();
                 }
             }
             if (other.CompareTag("Mob1_skill"))
@@ -98,10 +120,25 @@ namespace Jain
                 Mob1_skill mob1_skill = GameObject.FindGameObjectWithTag("Mob1_skill").GetComponent<Mob1_skill>();
 
                 Destroy(other.gameObject);
-                hp -= mob1_skill.damage;
+                
                 if (hp <= 0f)
                 {
+                    GameDataManager.instance.mobKill = 0;
+                    GameDataManager.instance.miniBossType = 0;
+                    GameDataManager.instance.PlayerTransform = Vector3.zero + (-Vector3.up * 2.9f);
+                    GameDataManager.instance.miniBossItem1 = 0;
+                    GameDataManager.instance.miniBossItem2 = 0;
+                    GameDataManager.instance.damage = 5;
+                    GameDataManager.instance.speed = 5;
+                    GameDataManager.instance.hp = 100;
+                    GameDataManager.instance.SaveData();
                     SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    hp -= mob1_skill.damage;
+                    GameDataManager.instance.hp = hp;
+                    GameDataManager.instance.SaveData();
                 }
             }
             //시간 관련 보스 드랍템
@@ -109,14 +146,32 @@ namespace Jain
             {
                 Destroy(other.gameObject);
                 miniBossItem1 = 1;
+                playerSkills.WskillCooldown = 0f;
+                GameDataManager.instance.miniBossItem1 = miniBossItem1;
+                GameDataManager.instance.SaveData();
+                if (miniBossItem2 == 1)
+                {
+                    playerSkills.RskillCooldown = 0f;
+                }
                 speed = 10;
+                GameDataManager.instance.speed = speed;
+                GameDataManager.instance.SaveData();
             }
             //공간 관련 보스 드랍템
             if (other.CompareTag("MiniBossItem2"))
             {
                 Destroy(other.gameObject);
                 miniBossItem2 = 1;
+                playerSkills.EskillCooldown = 0f;
+                GameDataManager.instance.miniBossItem2 = miniBossItem2;
+                GameDataManager.instance.SaveData();
+                if (miniBossItem1 == 1)
+                {
+                    playerSkills.RskillCooldown = 0f;
+                }
                 damage = 15;
+                GameDataManager.instance.damage = damage;
+                GameDataManager.instance.SaveData();
             }
         }
 
@@ -130,10 +185,13 @@ namespace Jain
 
         private void OnDisable()
         {
-            if (GameDataManager.instance != null)
+            if (hp > 0f)
             {
-                GameDataManager.instance.PlayerTransform = transform.position;
-                GameDataManager.instance.SaveData();
+                if (GameDataManager.instance != null)
+                {
+                    GameDataManager.instance.PlayerTransform = transform.position;
+                    GameDataManager.instance.SaveData();
+                }
             }
         }
     }

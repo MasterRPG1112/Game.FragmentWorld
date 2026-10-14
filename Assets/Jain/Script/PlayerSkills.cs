@@ -12,7 +12,7 @@ namespace Jain
         public float QskillCooldown;
         public GameObject Qskill;
 
-        //W 스킬
+        //W 스킬 - 시간정지
         bool W;
         bool A;
         public int Form = 0;
@@ -20,19 +20,23 @@ namespace Jain
         public GameObject Wskill1;
         public GameObject Wskill2;
 
-        //E 스킬
+        //E 스킬 - 공간참
         bool E;
         public float EskillCooldown;
         public GameObject Eskill;
         public float padding = 0.05f;
 
-        //R 스킬
+        //R 스킬 - 각성
         bool R;
         public float RskillCooldown;
         public GameObject Rskill1;
         public GameObject Rskill2;
         public int ReturnOfTheGuardian = 0;
 
+        //Z 스킬 - 회복
+        bool Z;
+        public float ZskillCooldown;
+        public GameObject Zskill;
 
         public GameObject Point;
         public GameObject MainCamera;
@@ -42,6 +46,7 @@ namespace Jain
             WskillCooldown = GameDataManager.instance.cooldown1;
             EskillCooldown = GameDataManager.instance.cooldown2;
             RskillCooldown = GameDataManager.instance.cooldown3;
+            ZskillCooldown = GameDataManager.instance.cooldown4;
         }
 
         void Start()
@@ -63,6 +68,7 @@ namespace Jain
             A = Input.GetButtonDown("Askill Button");
             E = Input.GetButtonDown("Eskill Button");
             R = Input.GetButtonDown("Rskill Button");
+            Z = Input.GetButtonDown("Zskill Button");
         }
 
         void KeyButton()
@@ -151,6 +157,16 @@ namespace Jain
                     }
                 }
             }
+            if (ZskillCooldown <= 0f)
+            {
+                if (Z == true)
+                {
+                    Skill_Z();
+                    ZskillCooldown = 10.0f;
+                    GameDataManager.instance.cooldown4 = ZskillCooldown;
+                    GameDataManager.instance.SaveData();
+                }
+            }
         }
 
         void CooldownMin()
@@ -174,6 +190,11 @@ namespace Jain
             if (RskillCooldown > 0f)
             {
                 RskillCooldown -= Time.deltaTime;
+                gameManager.ReloadUI();
+            }
+            if (ZskillCooldown > 0f)
+            {
+                ZskillCooldown -= Time.deltaTime;
                 gameManager.ReloadUI();
             }
         }
@@ -228,6 +249,11 @@ namespace Jain
             skill2.transform.SetParent(MainCamera.transform);
 
             ReturnOfTheGuardian = 1;
+        }
+
+        void Skill_Z()
+        {
+            Instantiate(Zskill, transform.position, transform.rotation);
         }
     }
 }

@@ -102,6 +102,7 @@ namespace Jain
         private void OnTriggerEnter2D(Collider2D other)
         {
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             float currentDamage;
             if (SceneManager.GetActiveScene().name == "World2")
             {
@@ -117,6 +118,10 @@ namespace Jain
                 if (Hp <= 0f)
                 {
                     Destroy(gameObject);
+                    gameManager.mobKill += 1;
+                    gameManager.RandomSpawn();
+                    GameDataManager.instance.mobKill = gameManager.mobKill;
+                    GameDataManager.instance.SaveData();
                 }
             }
             if (other.CompareTag("Wskill1"))
@@ -137,6 +142,10 @@ namespace Jain
                 if (Hp <= 0f)
                 {
                     Destroy(gameObject);
+                    gameManager.mobKill += 1;
+                    gameManager.RandomSpawn();
+                    GameDataManager.instance.mobKill = gameManager.mobKill;
+                    GameDataManager.instance.SaveData();
                 }
             }
         }

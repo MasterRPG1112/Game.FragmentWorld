@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d23051c78f51746951fbdfda4fd6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.Mob1_skill
-  damage: 8
+  damage: 3
 --- !u!212 &7702506427683167255
 SpriteRenderer:
   serializedVersion: 3

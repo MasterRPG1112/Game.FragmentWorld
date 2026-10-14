@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.Mob2_skill
   speed: 3.5
-  damage: 15
+  damage: 6
 --- !u!212 &3337474803706900176
 SpriteRenderer:
   serializedVersion: 3
