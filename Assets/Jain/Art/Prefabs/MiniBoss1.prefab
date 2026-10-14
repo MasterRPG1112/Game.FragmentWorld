@@ -160,6 +160,7 @@ MonoBehaviour:
   miniBoss1Pattern1: {fileID: 0}
   miniBoss1Pattern2: {fileID: 0}
   miniBoss1Pattern3: {fileID: 0}
+  miniBossItem1: {fileID: 537709545301460136, guid: 50c28c4f900b9484eb45625e857770b0, type: 3}
 --- !u!70 &8932830425183668161
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

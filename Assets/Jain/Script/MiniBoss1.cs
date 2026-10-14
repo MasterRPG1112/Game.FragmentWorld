@@ -11,6 +11,9 @@ namespace Jain
         public GameObject miniBoss1Pattern2;
         public GameObject miniBoss1Pattern3;
 
+        //æ∆¿Ã≈€
+        public GameObject miniBossItem1;
+
         void RandomPattern()
         {
             randomPattern = Random.Range(1, 4);
@@ -41,6 +44,7 @@ namespace Jain
 
         private void OnDestroy()
         {
+            Instantiate(miniBossItem1, transform.position, transform.rotation);
             BossHpBar.instance.HideBossHP();
         }
     }
