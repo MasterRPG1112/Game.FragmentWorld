@@ -469,19 +469,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39596ad39b431c4d919f644ba797e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.GameDataManager
-  PlayerTransform: {x: 0, y: 0, z: 0}
   worldText: 0
   cooldown1: 0
   cooldown2: 0
   cooldown3: 0
   cooldown4: 0
-  mobKill: 0
-  miniBossType: 0
-  miniBossItem1: 0
-  miniBossItem2: 0
+  PlayerTransform: {x: 0, y: 0, z: 0}
   hp: 0
   damage: 0
   speed: 0
+  mobKill: 0
+  bossCooldown: 0
+  bossHp: 0
+  miniBossType: 0
+  miniBossItem1: 0
+  miniBossItem2: 0
+  isMiniBoss: 0
 --- !u!4 &279602373
 Transform:
   m_ObjectHideFlags: 0

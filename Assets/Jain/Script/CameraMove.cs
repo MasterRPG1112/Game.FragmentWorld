@@ -12,6 +12,7 @@ namespace Jain
         public Vector3 offset = new Vector3(0f, 0f, -10f);
 
         private Vector3 currentVelocity = Vector3.zero;
+        private bool isFirstFrame = true;
 
         void Start()
         {
@@ -25,6 +26,13 @@ namespace Jain
 
         void LateUpdate()
         {
+            if (isFirstFrame)
+            {
+                transform.position = player.position + offset + new Vector3(0f, 2.9f, 0f); ;
+                isFirstFrame = false;
+                return;
+            }
+
             if (player == null) return;
 
             Vector3 playerPosition = player.position + offset + new Vector3(0f, 2.9f, 0f);

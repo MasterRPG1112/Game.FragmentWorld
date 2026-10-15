@@ -7,6 +7,7 @@ namespace Jain
     {
         //패턴 1~3
         int randomPattern;
+        public float bossCooldown;
         public GameObject miniBoss1Pattern1;
         public GameObject miniBoss1Pattern2;
         public GameObject miniBoss1Pattern3;
@@ -31,6 +32,14 @@ namespace Jain
         void Start()
         {
             CommonMob commonMob = GameObject.FindGameObjectWithTag("MiniBoss1").GetComponent<CommonMob>();
+            GameDataManager.instance.LoadDate();
+            commonMob.Hp = GameDataManager.instance.bossHp;
+            bossCooldown = GameDataManager.instance.bossCooldown;
+            transform.position = GameDataManager.instance.bossTransform;
+            if (commonMob.Hp <= 0)
+            {
+                commonMob.Hp = commonMob.maxHp;
+            }
             if (commonMob != null && BossHpBar.instance != null)
             {
                 BossHpBar.instance.ShowBossHP("조종당하는 지고한 시간의 조율자", commonMob.maxHp);
@@ -39,12 +48,24 @@ namespace Jain
 
         void Update()
         {
+            CommonMob commonMob = GameObject.FindGameObjectWithTag("MiniBoss1").GetComponent<CommonMob>();
             BossBarUpdate();
+            GameDataManager.instance.bossHp = commonMob.Hp;
+            GameDataManager.instance.bossTransform = transform.position;
+            GameDataManager.instance.SaveData();
         }
 
+        
         private void OnDestroy()
         {
-            Instantiate(miniBossItem1, transform.position, transform.rotation);
+            CommonMob commonMob = GetComponent<CommonMob>();
+
+            if (commonMob.Hp <= 0)
+            {
+                GameDataManager.instance.isMiniBoss = 0;
+                GameDataManager.instance.SaveData();
+                Instantiate(miniBossItem1, transform.position, transform.rotation);
+            }
             BossHpBar.instance.HideBossHP();
         }
     }

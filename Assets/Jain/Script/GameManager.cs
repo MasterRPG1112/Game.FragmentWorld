@@ -49,6 +49,12 @@ namespace Jain
             GameDataManager.instance.LoadDate();
             mobKill = GameDataManager.instance.mobKill;
             miniBossType = GameDataManager.instance.miniBossType;
+            isMiniBoss = GameDataManager.instance.isMiniBoss == 1 ? true : false;
+            if (isMiniBoss == true)
+            {
+                isMiniBoss = false;
+                MiniBossSpawn();
+            }
             if (bgmSetting2 != null) bgmSetting2.OffBGM();
         }
 
@@ -123,7 +129,7 @@ namespace Jain
             }
 
             isMiniBoss = true;
-
+            GameDataManager.instance.isMiniBoss = 1;
             mobKill = 0;
             randomSpawn = 0;
             GameDataManager.instance.mobKill = 0;
@@ -136,7 +142,8 @@ namespace Jain
 
             if (miniBossType == 0)
             {
-                miniBossType = Random.Range(1, 3);
+                miniBossType = 1;
+                //miniBossType = Random.Range(1, 3);
                 GameDataManager.instance.miniBossType = miniBossType;
                 GameDataManager.instance.SaveData();
             }

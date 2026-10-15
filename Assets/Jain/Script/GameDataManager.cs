@@ -1,24 +1,37 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Jain
 {
     public class GameDataManager : MonoBehaviour
     {
         public static GameDataManager instance;
-        public Vector3 PlayerTransform;
+
+        //UI 관련
         public int worldText;
+
+        //쿨타임
         public float cooldown1;
         public float cooldown2;
         public float cooldown3;
         public float cooldown4;
-        public int mobKill;
-        public int miniBossType;
-        public int miniBossItem1;
-        public int miniBossItem2;
+
+        //플레이어 관련
+        public Vector3 PlayerTransform;
         public float hp;
         public float damage;
         public float speed;
+
+        //보스 관련
+        public int mobKill;
+        public float bossCooldown;
+        public float bossHp;
+        public int miniBossType;
+        public int miniBossItem1;
+        public int miniBossItem2;
+        public int isMiniBoss;
+        public Vector3 bossTransform;
 
         private void Awake()
         {
@@ -30,8 +43,8 @@ namespace Jain
         public void LoadDate()
         {
             //Player 좌표
-            float x = PlayerPrefs.GetFloat("PlayerX", -7f);
-            float y = PlayerPrefs.GetFloat("PlayerY", -3f);
+            float x = PlayerPrefs.GetFloat("PlayerX");
+            float y = PlayerPrefs.GetFloat("PlayerY", -2.9f);
             float z = PlayerPrefs.GetFloat("PlayerZ", 0f);
 
             PlayerTransform = new Vector3(x, y, z);
@@ -43,9 +56,19 @@ namespace Jain
             cooldown3 = PlayerPrefs.GetFloat("Cooldown3");
             cooldown4 = PlayerPrefs.GetFloat("Cooldown4");
 
-            //준보스 관련
+            //보스 관련
             mobKill = PlayerPrefs.GetInt("MobKill");
+            bossCooldown = PlayerPrefs.GetFloat("BossCooldown");
+            bossHp = PlayerPrefs.GetFloat("BossHp");
             miniBossType = PlayerPrefs.GetInt("MiniBossType");
+            isMiniBoss = PlayerPrefs.GetInt("IsMiniBoss");
+
+            //보스 좌표
+            float bossX = PlayerPrefs.GetFloat("BossX");
+            float bossY = PlayerPrefs.GetFloat("BossY", -2.9f);
+            float bossZ = PlayerPrefs.GetFloat("BossZ", 0f);
+
+            bossTransform = new Vector3(bossX, bossY, bossZ);
 
             //아이템
             miniBossItem1 = PlayerPrefs.GetInt("MiniBossItem1");
@@ -81,9 +104,17 @@ namespace Jain
             PlayerPrefs.SetFloat("PlayerY", PlayerTransform.y);
             PlayerPrefs.SetFloat("PlayerZ", PlayerTransform.z);
 
-            //준보스 관련
+            //보스 관련
             PlayerPrefs.SetInt("MobKill", mobKill);
+            PlayerPrefs.SetFloat("BossCooldown", bossCooldown);
+            PlayerPrefs.SetFloat("BossHp", bossHp);
             PlayerPrefs.SetInt("MiniBossType", miniBossType);
+            PlayerPrefs.SetInt("IsMiniBoss", isMiniBoss);
+
+            //보스 좌표
+            PlayerPrefs.SetFloat("BossX", bossTransform.x);
+            PlayerPrefs.SetFloat("BossY", bossTransform.y);
+            PlayerPrefs.SetFloat("BossZ", bossTransform.z);
 
             //아이템
             PlayerPrefs.SetInt("MiniBossItem1", miniBossItem1);

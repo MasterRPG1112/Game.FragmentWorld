@@ -176,6 +176,8 @@ namespace Jain
             GameDataManager.instance.damage = 5;
             GameDataManager.instance.speed = 5;
             GameDataManager.instance.hp = 100;
+            GameDataManager.instance.isMiniBoss = 0;
+            GameDataManager.instance.bossHp = 0;
             GameDataManager.instance.SaveData();
         }
 
