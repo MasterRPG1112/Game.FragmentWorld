@@ -89,6 +89,7 @@ namespace Jain
         private void OnTriggerEnter2D(Collider2D other)
         {
             PlayerSkills playerSkills = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkills>();
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             if (other.CompareTag("Mob2_skill"))
             {
                 Mob2_skill mob2_skill = GameObject.FindGameObjectWithTag("Mob2_skill").GetComponent<Mob2_skill>();
@@ -131,6 +132,7 @@ namespace Jain
                 Destroy(other.gameObject);
                 miniBossItem1 = 1;
                 playerSkills.WskillCooldown = 0f;
+                gameManager.ReloadUI();
                 GameDataManager.instance.miniBossItem1 = miniBossItem1;
                 GameDataManager.instance.SaveData();
                 if (miniBossItem2 == 1)
@@ -147,6 +149,7 @@ namespace Jain
                 Destroy(other.gameObject);
                 miniBossItem2 = 1;
                 playerSkills.EskillCooldown = 0f;
+                gameManager.ReloadUI();
                 GameDataManager.instance.miniBossItem2 = miniBossItem2;
                 GameDataManager.instance.SaveData();
                 if (miniBossItem1 == 1)
