@@ -17,8 +17,12 @@ namespace Jain
 
         void Update()
         {
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             GetInput();
-            WorldChange();
+            if (player.cancel)
+            {
+                WorldChange();
+            }
         }
 
         void GetInput()

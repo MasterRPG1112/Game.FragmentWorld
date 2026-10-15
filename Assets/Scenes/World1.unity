@@ -1240,6 +1240,7 @@ MonoBehaviour:
   miniBossItem1: 0
   miniBossItem2: 0
   jumpPower: 5
+  cancel: 1
 --- !u!1 &1075685567
 GameObject:
   m_ObjectHideFlags: 0

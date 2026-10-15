@@ -5,19 +5,61 @@ namespace Jain
 {
     public class MiniBoss1 : MonoBehaviour
     {
-        //패턴 1~3
+        //패턴 1~2
         int randomPattern;
-        public float bossCooldown;
+        public float bossCooldown = 0f;
         public GameObject miniBoss1Pattern1;
         public GameObject miniBoss1Pattern2;
-        public GameObject miniBoss1Pattern3;
+
+        //패턴 1
+        void Pattern1()
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+            Instantiate(miniBoss1Pattern1, player.transform.position, player.transform.rotation);
+            Instantiate(miniBoss1Pattern1, player.transform.position + new Vector3(0f, 0f, -1f), player.transform.rotation);
+        }
+
+        //패턴 2
+        public GameObject point1;
+        public GameObject point2;
+        public GameObject point3;
+
+        void Pattern2()
+        {
+            int randomSpawn = Random.Range(1, 4);
+            if (randomSpawn == 1)
+            {
+                GameObject skill = Instantiate(miniBoss1Pattern2, point1.transform.position, point1.transform.rotation);
+                skill.transform.SetParent(point1.transform);
+            }
+            else if (randomSpawn == 2)
+            {
+                GameObject skill = Instantiate(miniBoss1Pattern2, point2.transform.position, point2.transform.rotation);
+                skill.transform.SetParent(point2.transform);
+            }
+            else
+            {
+                GameObject skill = Instantiate(miniBoss1Pattern2, point3.transform.position, point3.transform.rotation);
+                skill.transform.SetParent(point3.transform);
+            }
+        }
 
         //아이템
         public GameObject miniBossItem1;
 
         void RandomPattern()
         {
-            randomPattern = Random.Range(1, 4);
+            randomPattern = Random.Range(1, 3);
+            bossCooldown = 2f;
+        }
+
+        void Cooldown()
+        {
+            if (bossCooldown > 0f)
+            {
+                bossCooldown -= Time.deltaTime;
+            }
         }
 
         void BossBarUpdate()
@@ -53,6 +95,19 @@ namespace Jain
             GameDataManager.instance.bossHp = commonMob.Hp;
             GameDataManager.instance.bossTransform = transform.position;
             GameDataManager.instance.SaveData();
+            if (bossCooldown <= 0f)
+            {
+                RandomPattern();
+                if (randomPattern == 1)
+                {
+                    Pattern1();
+                }
+                if (randomPattern == 2)
+                {
+                    Pattern2();
+                }
+            }
+            Cooldown();
         }
 
         

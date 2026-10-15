@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c15cb20f9c952244ae064142c230279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Jain::Jain.Zskill
-  hill: 10
+  hill: 20
 --- !u!212 &3805710442809653425
 SpriteRenderer:
   serializedVersion: 3

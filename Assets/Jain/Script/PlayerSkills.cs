@@ -74,97 +74,100 @@ namespace Jain
         void KeyButton()
         {
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            if (QskillCooldown <= 0f)
+            if (player.cancel)
             {
-                if (Q == true)
+                if (QskillCooldown <= 0f)
                 {
-                    Skill_Q();
-                    QskillCooldown = 0.5f;
-                }
-            }
-            if (player.miniBossItem1 == 1)
-            {
-                if (SceneManager.GetActiveScene().name == "World1" || ReturnOfTheGuardian == 1)
-                {
-                    if (A == true)
+                    if (Q == true)
                     {
-                        if (Form == 0)
-                        {
-                            Form = 1;
-                            Debug.Log(Form);
-                        }
-                        else if (Form == 1)
-                        {
-                            Form = 0;
-                            Debug.Log(Form);
-                        }
+                        Skill_Q();
+                        QskillCooldown = 0.5f;
                     }
-                    if (WskillCooldown <= 0f)
+                }
+                if (player.miniBossItem1 == 1)
+                {
+                    if (SceneManager.GetActiveScene().name == "World1" || ReturnOfTheGuardian == 1)
                     {
-                        if (W == true)
+                        if (A == true)
                         {
                             if (Form == 0)
                             {
-                                Skill_W1();
-                                WskillCooldown = 4.5f;
-                                GameDataManager.instance.cooldown1 = WskillCooldown;
+                                Form = 1;
+                                Debug.Log(Form);
                             }
                             else if (Form == 1)
                             {
-                                Skill_W2();
-                                WskillCooldown = 10.0f;
-                                GameDataManager.instance.cooldown1 = WskillCooldown;
+                                Form = 0;
+                                Debug.Log(Form);
                             }
-                            GameDataManager.instance.SaveData();
                         }
-                    }
-                }
-            }
-            if (player.miniBossItem2 == 1)
-            {
-                if (SceneManager.GetActiveScene().name == "World2" || ReturnOfTheGuardian == 1)
-                {
-                    if (EskillCooldown <= 0f)
-                    {
-                        if (E == true)
+                        if (WskillCooldown <= 0f)
                         {
-                            for (int i = 0; i < 3; i++) Skill_E();
-                            if (ReturnOfTheGuardian == 1)
+                            if (W == true)
                             {
-                                EskillCooldown = 1.2f;
-                                GameDataManager.instance.cooldown2 = EskillCooldown;
+                                if (Form == 0)
+                                {
+                                    Skill_W1();
+                                    WskillCooldown = 4.5f;
+                                    GameDataManager.instance.cooldown1 = WskillCooldown;
+                                }
+                                else if (Form == 1)
+                                {
+                                    Skill_W2();
+                                    WskillCooldown = 10.0f;
+                                    GameDataManager.instance.cooldown1 = WskillCooldown;
+                                }
+                                GameDataManager.instance.SaveData();
                             }
-                            else
+                        }
+                    }
+                }
+                if (player.miniBossItem2 == 1)
+                {
+                    if (SceneManager.GetActiveScene().name == "World2" || ReturnOfTheGuardian == 1)
+                    {
+                        if (EskillCooldown <= 0f)
+                        {
+                            if (E == true)
                             {
-                                EskillCooldown = 7.5f;
-                                GameDataManager.instance.cooldown2 = EskillCooldown;
+                                for (int i = 0; i < 3; i++) Skill_E();
+                                if (ReturnOfTheGuardian == 1)
+                                {
+                                    EskillCooldown = 1.2f;
+                                    GameDataManager.instance.cooldown2 = EskillCooldown;
+                                }
+                                else
+                                {
+                                    EskillCooldown = 7.5f;
+                                    GameDataManager.instance.cooldown2 = EskillCooldown;
+                                }
+                                GameDataManager.instance.SaveData();
                             }
+                        }
+                    }
+                }
+                if (player.miniBossItem1 == 1 && player.miniBossItem2 == 1)
+                {
+                    if (RskillCooldown <= 0f)
+                    {
+                        if (R == true)
+                        {
+                            Skill_R();
+                            RskillCooldown = 50.0f;
+                            GameDataManager.instance.cooldown3 = RskillCooldown;
                             GameDataManager.instance.SaveData();
                         }
                     }
                 }
-            }
-            if (player.miniBossItem1 == 1 && player.miniBossItem2 == 1)
-            {
-                if (RskillCooldown <= 0f)
+                if (ZskillCooldown <= 0f)
                 {
-                    if (R == true)
+                    if (Z == true)
                     {
-                        Skill_R();
-                        RskillCooldown = 50.0f;
-                        GameDataManager.instance.cooldown3 = RskillCooldown;
+                        Skill_Z();
+                        ZskillCooldown = 10.0f;
+                        GameDataManager.instance.cooldown4 = ZskillCooldown;
                         GameDataManager.instance.SaveData();
                     }
-                }
-            }
-            if (ZskillCooldown <= 0f)
-            {
-                if (Z == true)
-                {
-                    Skill_Z();
-                    ZskillCooldown = 10.0f;
-                    GameDataManager.instance.cooldown4 = ZskillCooldown;
-                    GameDataManager.instance.SaveData();
                 }
             }
         }

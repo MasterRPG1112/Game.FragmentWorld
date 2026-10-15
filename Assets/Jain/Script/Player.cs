@@ -24,6 +24,9 @@ namespace Jain
         bool isJump;
         public float jumpPower;
 
+        //준보스1 패턴1 관련
+        public bool cancel = true;
+
         Rigidbody2D rb;
 
         void Start()
@@ -42,8 +45,11 @@ namespace Jain
         void Update()
         {
             GetInput();
-            Move();
-            Jump();
+            if (cancel)
+            {
+                Move();
+                Jump();
+            }
         }
 
         void GetInput()
@@ -86,6 +92,11 @@ namespace Jain
             }
         }
 
+        void Cancel()
+        {
+            cancel = true;
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             PlayerSkills playerSkills = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkills>();
@@ -122,6 +133,26 @@ namespace Jain
                 else
                 {
                     hp -= mob1_skill.damage;
+                    GameDataManager.instance.hp = hp;
+                    GameDataManager.instance.SaveData();
+                }
+            }
+            if (other.CompareTag("MiniBoss1_Pattern1"))
+            {
+                cancel = false;
+                Invoke("Cancel", 1.5f);
+            }
+            if (other.CompareTag("MiniBoss1_Pattern2"))
+            {
+                MiniBoss1_Pattern2 miniBoss1_Pattern2 = GameObject.FindGameObjectWithTag("MiniBoss1_Pattern2").GetComponent<MiniBoss1_Pattern2>();
+                if (hp <= 0f)
+                {
+                    DataReset();
+                    SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    hp -= miniBoss1_Pattern2.damage;
                     GameDataManager.instance.hp = hp;
                     GameDataManager.instance.SaveData();
                 }
