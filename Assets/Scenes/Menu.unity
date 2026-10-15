@@ -485,6 +485,7 @@ MonoBehaviour:
   miniBossItem1: 0
   miniBossItem2: 0
   isMiniBoss: 0
+  bossTransform: {x: 0, y: 0, z: 0}
 --- !u!4 &279602373
 Transform:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ namespace Jain
         {
             CommonMob commonMob = GameObject.FindGameObjectWithTag("MiniBoss1").GetComponent<CommonMob>();
             if (commonMob != null && BossHpBar.instance != null)
-    {
+            {
                 BossHpBar.instance.UpdateHP(commonMob.Hp);
             }
         }

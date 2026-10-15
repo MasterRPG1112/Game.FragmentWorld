@@ -18,10 +18,14 @@ namespace Jain
         void Update()
         {
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            Boss boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
             GetInput();
-            if (player.cancel)
+            if (boss.worldTransitionStop == 0)
             {
-                WorldChange();
+                if (player.cancel)
+                {
+                    WorldChange();
+                }
             }
         }
 

@@ -22,6 +22,10 @@ TagManager:
   - MiniBoss1_Pattern1
   - MiniBoss1_Pattern2
   - MiniBoss2
+  - MiniBoss2_Pattern1
+  - MiniBoss2_Pattern2
+  - Boss
+  - BossPattern1
   layers:
   - Default
   - TransparentFX

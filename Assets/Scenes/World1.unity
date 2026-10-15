@@ -1970,8 +1970,11 @@ MonoBehaviour:
   randomSpawn: 0
   miniBossType: 0
   miniBoss1: {fileID: 7440603065106352601, guid: 950833fa42b5bb0418c8809ee57c7884, type: 3}
-  miniBoss2: {fileID: 0}
+  miniBoss2: {fileID: 1936820195960573141, guid: fcfeef8503550cf4292e0106488b208a, type: 3}
   isMiniBoss: 0
+  boss: {fileID: 5244193206843615017, guid: 4f3613b96d92ba640bef1cf0f28cf81a, type: 3}
+  last: 0
+  isBoss: 0
 --- !u!4 &1419403020
 Transform:
   m_ObjectHideFlags: 0

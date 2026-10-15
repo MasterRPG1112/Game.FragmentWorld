@@ -31,6 +31,8 @@ namespace Jain
         public int miniBossItem1;
         public int miniBossItem2;
         public int isMiniBoss;
+        public int last;
+        public int isBoss;
         public Vector3 bossTransform;
 
         private void Awake()
@@ -62,6 +64,8 @@ namespace Jain
             bossHp = PlayerPrefs.GetFloat("BossHp");
             miniBossType = PlayerPrefs.GetInt("MiniBossType");
             isMiniBoss = PlayerPrefs.GetInt("IsMiniBoss");
+            last = PlayerPrefs.GetInt("Last");
+            isBoss = PlayerPrefs.GetInt("IsBoss");
 
             //º¸½º ÁÂÇ¥
             float bossX = PlayerPrefs.GetFloat("BossX");
@@ -110,6 +114,8 @@ namespace Jain
             PlayerPrefs.SetFloat("BossHp", bossHp);
             PlayerPrefs.SetInt("MiniBossType", miniBossType);
             PlayerPrefs.SetInt("IsMiniBoss", isMiniBoss);
+            PlayerPrefs.SetInt("Last", last);
+            PlayerPrefs.SetInt("IsBoss", isBoss);
 
             //º¸½º ÁÂÇ¥
             PlayerPrefs.SetFloat("BossX", bossTransform.x);

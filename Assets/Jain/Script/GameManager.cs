@@ -44,6 +44,12 @@ namespace Jain
         public GameObject miniBoss2;
         public bool isMiniBoss;
 
+        //보스 관련
+        private GameObject currentBoss = null;
+        public GameObject boss;
+        public bool last;
+        public bool isBoss;
+
         private void Awake()
         {
             GameDataManager.instance.LoadDate();
@@ -54,6 +60,13 @@ namespace Jain
             {
                 isMiniBoss = false;
                 MiniBossSpawn();
+            }
+            last = GameDataManager.instance.last == 1 ? true : false;
+            isBoss = GameDataManager.instance.isBoss == 1 ? true : false;
+            if (isBoss == true)
+            {
+                isBoss = false;
+                BossSpawn();
             }
             if (bgmSetting2 != null) bgmSetting2.OffBGM();
         }
@@ -72,6 +85,10 @@ namespace Jain
                 for (int i = 0; i < enemyCount; i++)
                 {
                     if (isMiniBoss)
+                    {
+                        break;
+                    }
+                    if (isBoss)
                     {
                         break;
                     }
@@ -123,11 +140,6 @@ namespace Jain
 
         public void MiniBossSpawn()
         {
-            if (isMiniBoss)
-            {
-                return;
-            }
-
             isMiniBoss = true;
             GameDataManager.instance.isMiniBoss = 1;
             mobKill = 0;
@@ -142,8 +154,7 @@ namespace Jain
 
             if (miniBossType == 0)
             {
-                miniBossType = 1;
-                //miniBossType = Random.Range(1, 3);
+                miniBossType = Random.Range(1, 3);
                 GameDataManager.instance.miniBossType = miniBossType;
                 GameDataManager.instance.SaveData();
             }
@@ -161,6 +172,24 @@ namespace Jain
                 currentMiniBoss = Instantiate(miniBoss2, spawnPosition, spawnRotation);
                 miniBossType = 1;
             }
+        }
+
+        public void BossSpawn()
+        {
+            isBoss = true;
+            GameDataManager.instance.isBoss = 1;
+            mobKill = 0;
+            GameDataManager.instance.mobKill = 0;
+            GameDataManager.instance.SaveData();
+
+            ClearAllEnemy();
+
+            if (bgmSetting1 != null) bgmSetting1.OffBGM();
+            if (bgmSetting2 != null) bgmSetting2.OnBGM();
+
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnValue.x, spawnValue.x) + player.position.x, spawnValue.y, spawnValue.z);
+            Quaternion spawnRotation = Quaternion.identity;
+            currentBoss = Instantiate(boss, spawnPosition, spawnRotation);
         }
 
         public void ReloadUI()
@@ -244,20 +273,49 @@ namespace Jain
 
         void Update()
         {
-            if (!isMiniBoss)
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            if (player.miniBossItem1 == 1 && player.miniBossItem2 == 1)
             {
-                if (mobKill >= 25 || randomSpawn == 24)
+                last = true;
+                GameDataManager.instance.last = 1;
+                GameDataManager.instance.SaveData();
+            }
+            if (!last)
+            {
+                if (!isMiniBoss)
                 {
-                    MiniBossSpawn();
+                    if (mobKill >= 25 || randomSpawn == 24)
+                    {
+                        MiniBossSpawn();
+                    }
+                }
+                else
+                {
+                    if (currentMiniBoss == null)
+                    {
+                        if (bgmSetting1 != null) bgmSetting1.OnBGM();
+                        if (bgmSetting2 != null) bgmSetting2.OffBGM();
+                        isMiniBoss = false;
+                    }
                 }
             }
             else
             {
-                if (currentMiniBoss == null)
+                if (!isBoss)
                 {
-                    if (bgmSetting1 != null) bgmSetting1.OnBGM();
-                    if (bgmSetting2 != null) bgmSetting2.OffBGM();
-                    isMiniBoss = false;
+                    if (mobKill >= 50)
+                    {
+                        BossSpawn();
+                    }
+                }
+                else
+                {
+                    if (currentBoss == null)
+                    {
+                        if (bgmSetting1 != null) bgmSetting1.OnBGM();
+                        if (bgmSetting2 != null) bgmSetting2.OffBGM();
+                        isBoss = false;
+                    }
                 }
             }
         }

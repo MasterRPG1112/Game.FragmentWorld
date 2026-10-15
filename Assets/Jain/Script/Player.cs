@@ -157,6 +157,36 @@ namespace Jain
                     GameDataManager.instance.SaveData();
                 }
             }
+            if (other.CompareTag("MiniBoss2_Pattern1"))
+            {
+                MiniBoss2_Pattern1 miniBoss2_Pattern1 = GameObject.FindGameObjectWithTag("MiniBoss2_Pattern1").GetComponent<MiniBoss2_Pattern1>();
+                if (hp <= 0f)
+                {
+                    DataReset();
+                    SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    hp -= miniBoss2_Pattern1.damage;
+                    GameDataManager.instance.hp = hp;
+                    GameDataManager.instance.SaveData();
+                }
+            }
+            if (other.CompareTag("MiniBoss2_Pattern2"))
+            {
+                MiniBoss2_Pattern2 miniBoss2_Pattern2 = GameObject.FindGameObjectWithTag("MiniBoss2_Pattern2").GetComponent<MiniBoss2_Pattern2>();
+                if (hp <= 0f)
+                {
+                    DataReset();
+                    SceneManager.LoadScene("GameOver");
+                }
+                else
+                {
+                    hp -= miniBoss2_Pattern2.damage;
+                    GameDataManager.instance.hp = hp;
+                    GameDataManager.instance.SaveData();
+                }
+            }
             //시간 관련 보스 드랍템
             if (other.CompareTag("MiniBossItem1"))
             {
@@ -209,6 +239,8 @@ namespace Jain
             GameDataManager.instance.hp = 100;
             GameDataManager.instance.isMiniBoss = 0;
             GameDataManager.instance.bossHp = 0;
+            GameDataManager.instance.last = 0;
+            GameDataManager.instance.isBoss = 0;
             GameDataManager.instance.SaveData();
         }
 
