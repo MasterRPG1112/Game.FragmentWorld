@@ -1089,6 +1089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966369849}
   - component: {fileID: 966369854}
+  - component: {fileID: 966369855}
   - component: {fileID: 966369853}
   - component: {fileID: 966369852}
   - component: {fileID: 966369851}
@@ -1241,6 +1242,18 @@ MonoBehaviour:
   miniBossItem2: 0
   jumpPower: 5
   cancel: 1
+--- !u!114 &966369855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966369848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9854ed7d318a814989d840e681bc3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Jain::Jain.Cheat
 --- !u!1 &1075685567
 GameObject:
   m_ObjectHideFlags: 0
