@@ -43,14 +43,26 @@ namespace Jain
 
         private void Awake()
         {
+            // 데이터 로드는 Awake에서 딱 1번만 수행
             if (GameDataManager.instance != null)
             {
                 GameDataManager.instance.LoadDate();
                 mobKill = GameDataManager.instance.mobKill;
                 miniBossType = GameDataManager.instance.miniBossType;
-                isMiniBoss = GameDataManager.instance.isMiniBoss == 1 ? true : false;
-                last = GameDataManager.instance.last == 1 ? true : false;
-                isBoss = GameDataManager.instance.isBoss == 1 ? true : false;
+                isMiniBoss = GameDataManager.instance.isMiniBoss == 1;
+                last = GameDataManager.instance.last == 1;
+                isBoss = GameDataManager.instance.isBoss == 1;
+            }
+
+            if (bgmSetting2 != null) bgmSetting2.OffBGM();
+        }
+
+        void Start()
+        {
+            if (player == null)
+            {
+                GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+                if (playerObj != null) player = playerObj.transform;
             }
 
             if (isMiniBoss)
@@ -63,7 +75,9 @@ namespace Jain
                 isBoss = false;
                 BossSpawn();
             }
-            if (bgmSetting2 != null) bgmSetting2.OffBGM();
+
+            StartCoroutine(SpawnEnemy());
+            ReloadUI();
         }
 
         IEnumerator SpawnEnemy()
@@ -71,7 +85,6 @@ namespace Jain
             yield return new WaitForSeconds(spawnWait);
             while (true)
             {
-                // 미니보스나 보스가 활성화되어 있으면 적 스폰을 멈추고 대기 (무한 루프 방지)
                 if (isMiniBoss || isBoss)
                 {
                     yield return new WaitForSeconds(1.0f);
@@ -225,23 +238,15 @@ namespace Jain
             randomSpawn = Random.Range(1, 50);
         }
 
-        void Start()
-        {
-            StartCoroutine(SpawnEnemy());
-            if (GameDataManager.instance != null)
-            {
-                GameDataManager.instance.LoadDate();
-            }
-            ReloadUI();
-        }
-
         void Update()
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj == null) return;
 
             Player playerComp = playerObj.GetComponent<Player>();
-            if (playerComp != null && playerComp.miniBossItem1 == 1 && playerComp.miniBossItem2 == 1)
+
+            // 매 프레임 무한 SaveData 호출 차단 (!last 일 때 딱 1번만 세이브)
+            if (!last && playerComp != null && playerComp.miniBossItem1 == 1 && playerComp.miniBossItem2 == 1)
             {
                 last = true;
                 if (GameDataManager.instance != null)
@@ -267,6 +272,10 @@ namespace Jain
                         if (bgmSetting1 != null) bgmSetting1.OnBGM();
                         if (bgmSetting2 != null) bgmSetting2.OffBGM();
                         isMiniBoss = false;
+                        if (GameDataManager.instance != null)
+                        {
+                            GameDataManager.instance.isMiniBoss = 0;
+                        }
                     }
                 }
             }
@@ -286,6 +295,10 @@ namespace Jain
                         if (bgmSetting1 != null) bgmSetting1.OnBGM();
                         if (bgmSetting2 != null) bgmSetting2.OffBGM();
                         isBoss = false;
+                        if (GameDataManager.instance != null)
+                        {
+                            GameDataManager.instance.isBoss = 0;
+                        }
                     }
                 }
             }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5095475438131111103}
   - component: {fileID: -309914711330167203}
-  - component: {fileID: 4974196270098195933}
+  - component: {fileID: 3033625725521331604}
   - component: {fileID: 815211201221693288}
   - component: {fileID: 4747985044527710754}
   m_Layer: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   StopTime: 0
   Player: {fileID: 0}
   type: 1
---- !u!114 &4974196270098195933
+--- !u!114 &3033625725521331604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

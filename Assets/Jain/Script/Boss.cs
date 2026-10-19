@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Jain
 {
     public class Boss : MonoBehaviour
     {
-        int randomPattern;
+        private int randomPattern;
         public float bossCooldown = 0f;
         public GameObject bossPattern1;
         public GameObject bossPattern2;
@@ -12,60 +13,61 @@ namespace Jain
 
         public float padding = 0.05f;
         private CommonMob commonMob;
+        private bool isDead = false;
 
         void Start()
         {
             worldTransitionStop = 1;
 
-            // 보스 자신 또는 태그 검색을 통해 CommonMob 안전 확보
+            // 자기 자신의 CommonMob 가져오기
             commonMob = GetComponent<CommonMob>();
-            if (commonMob == null)
-            {
-                GameObject miniBossObj = GameObject.FindGameObjectWithTag("MiniBoss2");
-                if (miniBossObj != null)
-                {
-                    commonMob = miniBossObj.GetComponent<CommonMob>();
-                }
-            }
 
             if (GameDataManager.instance != null)
             {
                 GameDataManager.instance.LoadDate();
+
                 if (commonMob != null)
                 {
-                    commonMob.Hp = GameDataManager.instance.bossHp;
+                    // 저장된 HP가 0 이하이면 maxHp로 설정
+                    if (GameDataManager.instance.bossHp <= 0)
+                    {
+                        commonMob.Hp = commonMob.maxHp;
+                    }
+                    else
+                    {
+                        commonMob.Hp = GameDataManager.instance.bossHp;
+                    }
                 }
+
                 bossCooldown = GameDataManager.instance.bossCooldown;
                 transform.position = GameDataManager.instance.bossTransform;
             }
 
-            if (commonMob != null)
+            if (commonMob != null && BossHpBar.instance != null)
             {
-                if (commonMob.Hp <= 0)
-                {
-                    commonMob.Hp = commonMob.maxHp;
-                }
-
-                if (BossHpBar.instance != null)
-                {
-                    BossHpBar.instance.ShowBossHP("파괴자", commonMob.maxHp);
-                }
+                BossHpBar.instance.ShowBossHP("파괴자", commonMob.maxHp);
             }
         }
 
         void Update()
         {
-            if (commonMob == null) return;
+            // Null 체크 및 사망 상태 확인 (에러 방지 핵심)
+            if (commonMob == null || isDead) return;
 
-            BossBarUpdate();
-
-            if (GameDataManager.instance != null)
+            // HP 바 실시간 갱신
+            if (BossHpBar.instance != null)
             {
-                GameDataManager.instance.bossHp = commonMob.Hp;
-                GameDataManager.instance.bossTransform = transform.position;
-                // 매 프레임 SaveData()를 호출하면 게임이 멈추거나 렉이 걸립니다. 꼭 필요할 때만 호출하는 것이 좋습니다.
+                BossHpBar.instance.UpdateHP(commonMob.Hp);
             }
 
+            // [사망 체크] HP가 0 이하가 되면 Boss 스크립트가 직접 사망 처리
+            if (commonMob.Hp <= 0f)
+            {
+                Die();
+                return;
+            }
+
+            // 보스 패턴 실행
             if (bossCooldown <= 0f)
             {
                 RandomPattern();
@@ -81,7 +83,38 @@ namespace Jain
                     Pattern2();
                 }
             }
+
             Cooldown();
+        }
+
+        // 보스 사망 처리 전용 함수
+        void Die()
+        {
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+            isDead = true;
+            worldTransitionStop = 0;
+
+            // 데이터 저장 및 보스 상태 해제
+            if (GameDataManager.instance != null)
+            {
+                GameDataManager.instance.mobKill = 0;
+                GameDataManager.instance.isBoss = 0;
+                GameDataManager.instance.bossHp = 0;
+                GameDataManager.instance.SaveData();
+            }
+
+            // HP 바 숨기기
+            if (BossHpBar.instance != null)
+            {
+                BossHpBar.instance.HideBossHP();
+            }
+
+            // 보스 파괴 (여기서 단 1번만 호출)
+            Destroy(gameObject);
+
+            player.DataReset();
+            SceneManager.LoadScene("Clear");
         }
 
         void Pattern1()
@@ -90,7 +123,7 @@ namespace Jain
             if (mainCam == null || bossPattern1 == null) return;
 
             float randomX = Random.Range(0f + padding, 1f - padding);
-            Vector3 viewportPoint = new Vector3(randomX, 9f, Mathf.Abs(mainCam.transform.position.z));
+            Vector3 viewportPoint = new Vector3(randomX, 0.9f, Mathf.Abs(mainCam.transform.position.z));
             Vector3 worldSpawnPos = mainCam.ViewportToWorldPoint(viewportPoint);
             worldSpawnPos.z = 0f;
 
@@ -99,7 +132,7 @@ namespace Jain
 
         void Pattern2()
         {
-            // 패턴 2 구현
+            // 패턴 2 로직
         }
 
         void RandomPattern()
@@ -116,31 +149,9 @@ namespace Jain
             }
         }
 
-        void BossBarUpdate()
-        {
-            if (commonMob != null && BossHpBar.instance != null)
-            {
-                BossHpBar.instance.UpdateHP(commonMob.Hp);
-            }
-        }
-
         private void OnDestroy()
         {
-            if (commonMob == null)
-            {
-                commonMob = GetComponent<CommonMob>();
-            }
-
-            if (commonMob != null && commonMob.Hp <= 0)
-            {
-                worldTransitionStop = 0;
-                if (GameDataManager.instance != null)
-                {
-                    GameDataManager.instance.isBoss = 0;
-                    GameDataManager.instance.SaveData();
-                }
-            }
-
+            // Destroy(gameObject)를 절대 지우고 UI 정리용으로만 사용
             if (BossHpBar.instance != null)
             {
                 BossHpBar.instance.HideBossHP();

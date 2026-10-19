@@ -223,7 +223,7 @@ namespace Jain
             }
         }
 
-        void DataReset()
+        public void DataReset()
         {
             GameDataManager.instance.mobKill = 0;
             GameDataManager.instance.miniBossType = 0;
